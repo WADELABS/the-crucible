@@ -1,6 +1,6 @@
 from typing import Any, Dict
-from ..core.instrument import AbstractInstrument
-from ..core.substrate import CalibratedSubstrate
+from ...core.instrument import AbstractInstrument
+from ...core.substrate import CalibratedSubstrate
 
 class VoidOperator(AbstractInstrument):
     """

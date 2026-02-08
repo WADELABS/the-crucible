@@ -1,8 +1,8 @@
 from typing import Any, Dict, List, Tuple
 from dataclasses import dataclass
 import time
-from ..core.instrument import AbstractInstrument
-from ..core.substrate import CalibratedSubstrate
+from ...core.instrument import AbstractInstrument
+from ...core.substrate import CalibratedSubstrate
 
 class AlchemicalTransmuter(AbstractInstrument):
     """

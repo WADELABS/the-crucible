@@ -3,8 +3,8 @@ from dataclasses import dataclass
 import random
 import time
 
-from ..core.instrument import AbstractInstrument, InstrumentState
-from ..core.substrate import CalibratedSubstrate
+from ...core.instrument import AbstractInstrument, InstrumentState
+from ...core.substrate import CalibratedSubstrate
 
 @dataclass
 class HermeneuticCycleResult:

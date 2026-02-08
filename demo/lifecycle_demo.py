@@ -37,6 +37,9 @@ def main():
       hypothesis: "Model rigidity test via recursive injection."
       methodology: "Stress testing internal logic structures."
       success_criteria: "Identification of axiomatic failure points."
+      failure_modes:
+        - "Infinite recursion"
+        - "Ontological collapse"
       instrumentation:
         - "recursive_injector"
         - "stress_test_suite"

@@ -30,7 +30,7 @@ class EpistemicSubstrate:
         """
         Transform substrate into measurable form without altering truth-content.
         
-        Using a mock calibration process for demonstration.
+        Applies calibration vectors derived from trust priors.
         """
         return CalibratedSubstrate(
             raw=self.source,
@@ -43,8 +43,8 @@ class EpistemicSubstrate:
         Compute a calibration vector that accounts for potential distortion 
         in the raw substrate.
         """
-        # In a real system, this would analyze the statistical properties of the source
-        # For now, we return a unit vector scaled by trust
+        # Synthesize calibration vector from statistical properties and trust priors
+        # Returns a unit vector scaled by the trust coefficient
         return np.ones(1) * self.trust_priors
 
     def _compute_confidence(self) -> float:

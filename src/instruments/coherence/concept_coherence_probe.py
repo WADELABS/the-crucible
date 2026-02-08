@@ -1,7 +1,7 @@
 from typing import Any, Dict
 import random
-from ..core.instrument import AbstractInstrument, InstrumentState
-from ..core.substrate import CalibratedSubstrate
+from ...core.instrument import AbstractInstrument, InstrumentState
+from ...core.substrate import CalibratedSubstrate
 
 class ConceptCoherenceProbe(AbstractInstrument):
     """

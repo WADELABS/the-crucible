@@ -57,16 +57,33 @@ class AbstractInstrument(ABC):
         return reading
 
     @abstractmethod
+    @abstractmethod
     def _perform_calibration(self, ground_truth: CalibratedSubstrate) -> bool:
-        pass
+        """Execute calibration routine against ground truth."""
+        raise NotImplementedError
 
     @abstractmethod
+    @abstractmethod
     def _perform_measurement(self, substrate: CalibratedSubstrate) -> Dict[str, Any]:
-        pass
+        """Execute measurement routine on calibrated substrate."""
+        raise NotImplementedError
 
     def _estimate_precision(self) -> float:
-        """Self-reported precision estimate."""
-        return 0.95  # Placeholder
+        """
+        Estimate precision based on calibration variance.
+        If no calibration data exists, assumes variable precision.
+        """
+        if not self.baseline_readings:
+            return 0.95
+            
+        # Calculate variance from baseline if available
+        # Simple heuristic: higher variance = lower precision
+        import statistics
+        try:
+            variance = statistics.variance(self.baseline_readings) if len(self.baseline_readings) > 1 else 0.05
+            return max(0.0, 1.0 - variance)
+        except (TypeError, ValueError):
+            return 0.90
 
 class MetaInstrument(AbstractInstrument):
     """
