@@ -1,0 +1,2 @@
+numpy>=1.20.0
+# Optional: torch or tensorflow if strictly required, but for now assuming standard lib + numpy
