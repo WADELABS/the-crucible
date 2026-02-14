@@ -1,6 +1,18 @@
 # The Crucible: AI Safety & Model Robustness
 ### Production-Grade Security for Large Language Models
 
+```mermaid
+graph TD
+    A[Target AI Model] --> B{Crucible Harness}
+    B --> C[Gradient Mapping]
+    B --> D[Causal Intervention]
+    B --> E[Adversarial Red-Teaming]
+    C --> F[Telemetry Data]
+    D --> F
+    E --> F
+    F --> G[ISO 42001 Compliance Report]
+```
+
 [![Security](https://img.shields.io/badge/security-adversarial--testing-blue)](#)
 [![Research](https://img.shields.io/badge/research-llm--robustness-green)](#)
 [![Compliance](https://img.shields.io/badge/compliance-ISO--42001-orange)](#)
@@ -38,6 +50,9 @@ Large language models can develop emergent behaviors that bypass safety alignmen
 ```bash
 python portfolio_demo.py
 ```
+
+## ⚖️ Governance & Alignment
+The Crucible is designed strictly for defensive security research and safety alignment. To prevent misuse, all adversarial modules are decoupled from automated execution in production environments. We adhere to the principle of "Ethical Neural Disclosure," ensuring that identified model vulnerabilities are remediated through causal patching rather than exploited.
 
 ---
 *Developed for WADELABS AI Safety Research 2026*
