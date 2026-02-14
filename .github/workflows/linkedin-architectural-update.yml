@@ -10,6 +10,9 @@ on:
 jobs:
   dispatch-to-linkedin:
     runs-on: ubuntu-latest
+    env:
+      LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+      N8N_WEBHOOK_URL: ${{ secrets.N8N_WEBHOOK_URL }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -22,11 +25,11 @@ jobs:
           # Professional constraint: Zero emojis. Direct language.
           CONTENT="Research update: Expanded the 'Hermeneutic Injection' vectors within The Crucible. Our focus remains on the structural stress-testing of neural models to identify latent security vulnerabilities before production deployment."
           
-          echo "payload={\"project\": \"crucible\", \"topic\": \"AI Safety\", \"content\": \"$CONTENT\", \"author\": \"${{ secrets.LINKEDIN_PERSON_URN }}\"}" >> $GITHUB_OUTPUT
+          echo "payload={\"project\": \"crucible\", \"topic\": \"AI Safety\", \"content\": \"$CONTENT\", \"author\": \"$LINKEDIN_PERSON_URN\"}" >> $GITHUB_OUTPUT
 
       - name: Send Webhook to n8n
         run: |
-          curl -X POST "${{ secrets.N8N_WEBHOOK_URL }}" \
+          curl -X POST "$N8N_WEBHOOK_URL" \
             -H "Content-Type: application/json" \
             -d '${{ steps.payload.outputs.payload }}'
         continue-on-error: true
