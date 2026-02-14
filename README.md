@@ -45,10 +45,50 @@ Large language models can develop emergent behaviors that bypass safety alignmen
 6.  **Quantum-Inspired Activation Pruning**: (Layer 6) Verifies model stability by sparsifying low-salience pathways to ensure the decision core remains aligned under stress.
 7.  **Auto-Reporting for ISO 42001**: (Layer 7) Compiles all structural findings into audit-ready reports for regulatory bodies.
 
+## 🛠️ Installation
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Or install as a package
+pip install -e .
+```
+
 ## 🛠️ Usage
 
 ```bash
-python portfolio_demo.py
+# Run the portfolio demo
+python examples/portfolio_demo.py
+```
+
+### Python API
+
+```python
+# After pip install -e .
+from crucible.dissection.neural import GradientMapper, CausalIntervener
+from crucible.intervention.adversarial import AdversarialLoopback, QuantumPruner
+from crucible.analysis.information import InformationBottleneck, SymbolicExtractor
+from crucible.compliance.iso42001 import ComplianceAuditor
+
+# Initialize your PyTorch model
+model = YourModel()
+
+# Layer 1: Gradient Mapping
+mapper = GradientMapper(model)
+grad_stats = mapper.map_vector_field()
+
+# Layer 2: Causal Intervention
+intervener = CausalIntervener(model)
+intervener.apply_ablation_hook("layer1")
+
+# Layer 4: Information Bottleneck
+ib_analyzer = InformationBottleneck()
+entropy = ib_analyzer.calculate_entropy(output)
+
+# Layer 7: Generate Compliance Report
+auditor = ComplianceAuditor()
+report_path = auditor.generate_audit_report("MODEL_ID", metrics)
 ```
 
 ## ⚖️ Governance & Alignment
