@@ -1,5 +1,5 @@
-# The Crucible: AI Safety & Model Robustness
-### Production-Grade Security for Large Language Models
+# The Crucible
+### A high-velocity testing harness for validating agentic autonomy and computational constraints.
 
 ```mermaid
 graph TD
