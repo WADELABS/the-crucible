@@ -1,24 +1,37 @@
-# The Crucible: Neural Trading Dissection (AFRRC Tier 4)
-### Invasive Stress-Testing for Algorithmic Integrity
+# The Crucible: AI Safety & Model Robustness
+### Production-Grade Security for Large Language Models
 
-[![Dissection](https://img.shields.io/badge/dissection-neural--mapping-blue)](#)
-[![Intervention](https://img.shields.io/badge/intervention-causal--patching-green)](#)
+[![Security](https://img.shields.io/badge/security-adversarial--testing-blue)](#)
+[![Research](https://img.shields.io/badge/research-llm--robustness-green)](#)
 [![Compliance](https://img.shields.io/badge/compliance-ISO--42001-orange)](#)
 
-## 🏛️ Grounding: The Predatory AI Problem
-In autonomous trading, deep learning models can develop "Illegal Predatory Behaviors" (e.g., wash trading or quote stuffing) as emergent properties of their optimization. Standard black-box testing cannot prove the *intent* or *origin* of these behaviors.
+## 🏛️ Grounding: The LLM Security Problem
+Large language models can develop emergent behaviors that bypass safety alignment—from prompt injections to adversarial goal manipulation. Standard black-box testing cannot identify the **internal mechanisms** or **causal pathways** that lead to unsafe outputs.
 
-**The Crucible solves this by performing invasive neural surgery on trading models to audit hidden goal structures.**
+**The Crucible solves this through invasive neural dissection and adversarial stress-testing of AI systems.**
+
+> **Production Case Study**: We use autonomous trading models as our security research environment—a domain where emergent predatory behaviors (wash trading, quote stuffing) provide measurable, high-stakes test cases for adversarial robustness.
+
+## 🔒 Security Vectors
+
+| Attack Vector | Detection Method | Layer |
+|---------------|------------------|-------|
+| **Prompt Injection** | Gradient Vector Field Mapping | 1 |
+| **Data Poisoning** | Information Bottleneck Analysis | 4 |
+| **Goal Misalignment** | Causal Intervention Hooks | 2 |
+| **Adversarial Examples** | Adversarial Loopback Orchestration | 3 |
+| **Weight Tampering** | Quantum-Inspired Activation Pruning | 6 |
+| **Information Leakage** | Mutual Information Calculation | 4 |
 
 ## 🚀 7-Layer Complexity Architecture
 
-1.  **Gradient Vector Field Mapping**: (Layer 1) Uses **PyTorch** to visualize gradient flows during trade execution, detecting sensitivity to "Market Manipulation" features.
-2.  **Causal Intervention Hooks**: (Layer 2) Real-time activation patching that surgically disables specific neural pathways to verify if a trading decision was based on fair market value or a predatory proxy.
-3.  **Adversarial Loopback Orchestration**: (Layer 3) A competitive stress-test where a "Red-Team" agent attempts to trick the trading AI into committing a regulatory violation.
-4.  **Information Bottleneck Analysis**: (Layer 4) Calculates the **Mutual Information** between internal weights and prohibited market data to detect "Information Leakage."
-5.  **Formal Logical Extraction**: (Layer 5) Extracts discrete Symbolic Rules from continuous neural weights to turn "Black Box" trades into auditable logic.
-6.  **Quantum-Inspired Activation Pruning**: (Layer 6) Verifies model stability by sparsifying low-salience pathways to ensure the "Decision Core" remains compliant under stress.
-7.  **Auto-Reporting for ISO 42001**: (Layer 7) Compiles all structural findings into audit-ready reports for financial regulatory bodies (SEC, ESMA).
+1.  **Gradient Vector Field Mapping**: (Layer 1) Uses **PyTorch** to visualize gradient flows during execution, detecting sensitivity to adversarial features.
+2.  **Causal Intervention Hooks**: (Layer 2) Real-time activation patching that surgically disables specific neural pathways to verify causal structure of decisions.
+3.  **Adversarial Loopback Orchestration**: (Layer 3) A competitive stress-test where a "Red-Team" agent attempts to trigger safety violations.
+4.  **Information Bottleneck Analysis**: (Layer 4) Calculates the **Mutual Information** between internal weights and prohibited data to detect information leakage.
+5.  **Formal Logical Extraction**: (Layer 5) Extracts discrete Symbolic Rules from continuous neural weights to turn "Black Box" decisions into auditable logic.
+6.  **Quantum-Inspired Activation Pruning**: (Layer 6) Verifies model stability by sparsifying low-salience pathways to ensure the decision core remains aligned under stress.
+7.  **Auto-Reporting for ISO 42001**: (Layer 7) Compiles all structural findings into audit-ready reports for regulatory bodies.
 
 ## 🛠️ Usage
 
@@ -27,4 +40,4 @@ python portfolio_demo.py
 ```
 
 ---
-*Developed for WADELABS AFRRC Ecosystem 2026*
+*Developed for WADELABS AI Safety Research 2026*
