@@ -1,0 +1,16 @@
+README.md
+setup.py
+src/crucible/__init__.py
+src/crucible/analysis/__init__.py
+src/crucible/analysis/information.py
+src/crucible/compliance/__init__.py
+src/crucible/compliance/iso42001.py
+src/crucible/dissection/__init__.py
+src/crucible/dissection/neural.py
+src/crucible/intervention/__init__.py
+src/crucible/intervention/adversarial.py
+src/the_crucible.egg-info/PKG-INFO
+src/the_crucible.egg-info/SOURCES.txt
+src/the_crucible.egg-info/dependency_links.txt
+src/the_crucible.egg-info/requires.txt
+src/the_crucible.egg-info/top_level.txt

@@ -1,3 +1,23 @@
+Metadata-Version: 2.1
+Name: the-crucible
+Version: 0.1.0
+Summary: A high-velocity testing harness for validating agentic autonomy and computational constraints
+Home-page: https://github.com/WADELABS/the-crucible
+Author: WADELABS
+Author-email: 
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
 # The Crucible
 ### A high-velocity testing harness for validating agentic autonomy and computational constraints.
 
