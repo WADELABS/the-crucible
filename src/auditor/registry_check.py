@@ -3,7 +3,7 @@ src/auditor/registry_check.py
 The Story Auditor: Fact-checking the fabrication.
 """
 
-from typing import Dict, Optional
+from typing import Dict, Optional, Any, List
 
 class StoryAuditor:
     def __init__(self):
@@ -13,7 +13,7 @@ class StoryAuditor:
             "HERMAN MILLER": {"founded": 1905, "location": "MICHIGAN", "status": "ACTIVE"}
         }
 
-    def verify_business(self, business_name: str, claimed_year: int) -> Dict:
+    def verify_business(self, business_name: str, claimed_year: Any) -> Dict:
         """
         Verifies if a business existed during the claimed production year.
         """
@@ -30,7 +30,7 @@ class StoryAuditor:
         except (ValueError, TypeError):
             return {"status": "ERROR", "message": "Claimed year must be a numeric value."}
 
-        if year_int < record["founded"]:
+        if int(year_int) < int(record["founded"]):
             return {
                 "status": "FABRICATED",
                 "message": f"Conflict detected: {business_name} was founded in {record['founded']}, but claim is for {year_int}."
