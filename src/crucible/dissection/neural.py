@@ -43,6 +43,11 @@ class CausalIntervener:
                 handle = module.register_forward_hook(hook)
                 self.hooks.append(handle)
                 logging.info(f"Ablation hook applied to layer: {layer_name}")
+                return handle
+        
+        # Return None if layer not found
+        logging.warning(f"Layer {layer_name} not found in model")
+        return None
 
     def clear_hooks(self):
         for handle in self.hooks:
