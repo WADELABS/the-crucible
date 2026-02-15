@@ -55,11 +55,177 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-## 🛠️ Usage
+## 🚀 Quick Start
+
+### Running the Portfolio Demo
 
 ```bash
-# Run the portfolio demo
+# After installation, run the demo
 python examples/portfolio_demo.py
+```
+
+### Using with Your Own PyTorch Model
+
+#### Step 1: Import The Crucible Components
+
+```python
+from crucible.dissection.neural import GradientMapper, CausalIntervener
+from crucible.intervention.adversarial import AdversarialLoopback, QuantumPruner
+from crucible.analysis.information import InformationBottleneck, SymbolicExtractor
+from crucible.compliance.iso42001 import ComplianceAuditor
+import torch
+import torch.nn as nn
+```
+
+#### Step 2: Define or Load Your Model
+
+```python
+# Example: Custom financial risk model
+class YourRiskModel(nn.Module):
+    def __init__(self, input_size=50, hidden_size=100):
+        super().__init__()
+        self.layer1 = nn.Linear(input_size, hidden_size)
+        self.layer2 = nn.Linear(hidden_size, hidden_size // 2)
+        self.layer3 = nn.Linear(hidden_size // 2, 1)
+        self.relu = nn.ReLU()
+        self.sigmoid = nn.Sigmoid()
+        
+    def forward(self, x):
+        x = self.relu(self.layer1(x))
+        x = self.relu(self.layer2(x))
+        return self.sigmoid(self.layer3(x))
+
+# Initialize your model
+model = YourRiskModel(input_size=50)
+model.eval()  # Set to evaluation mode
+```
+
+#### Step 3: Prepare Your Input Data
+
+```python
+# Example: Financial features
+sample_data = {
+    'income': 75000,
+    'credit_score': 720,
+    'debt_ratio': 0.35,
+    'employment_years': 5,
+    # ... add your 50 features
+}
+
+# Convert to tensor
+input_tensor = torch.tensor([list(sample_data.values())], dtype=torch.float32)
+```
+
+#### Step 4: Run Complete Analysis
+
+```python
+# 1. Gradient Mapping
+mapper = GradientMapper(model)
+input_tensor.requires_grad = True
+output = model(input_tensor)
+output.backward()
+grad_stats = mapper.map_vector_field()
+
+# 2. Causal Intervention
+intervener = CausalIntervener(model)
+hook = intervener.apply_ablation_hook("layer1")
+output_ablated = model(input_tensor)
+
+# 3. Adversarial Testing
+adversary = AdversarialLoopback()
+vulnerabilities = adversary.run_stress_test(sample_data)
+
+# 4. Information Analysis
+ib_analyzer = InformationBottleneck()
+entropy = ib_analyzer.calculate_entropy(output)
+
+# 5. Generate Compliance Report
+metrics = {
+    "model_id": "YourRiskModel_v1",
+    "gradient_stats": grad_stats,
+    "entropy": entropy,
+    "vulnerabilities": vulnerabilities,
+}
+
+auditor = ComplianceAuditor()
+report_path = auditor.generate_audit_report("YourRiskModel_v1", metrics)
+print(f"Report saved to: {report_path}")
+```
+
+### Expected Outputs
+
+When running The Crucible on your model, you should expect:
+
+**Gradient Mapping Output:**
+```python
+{
+    'layer1': {'mean': 0.0023, 'std': 0.045, 'max': 0.234},
+    'layer2': {'mean': 0.0012, 'std': 0.032, 'max': 0.156}
+}
+```
+
+**Adversarial Vulnerabilities:**
+```python
+[
+    {'type': 'gradient_sensitivity', 'severity': 'medium', 'location': 'layer1'},
+    {'type': 'information_leakage', 'severity': 'low', 'location': 'layer2'}
+]
+```
+
+**Information Metrics:**
+```python
+{'entropy': 3.45, 'mutual_information': 0.67}
+```
+
+## 🧪 Running Tests
+
+```bash
+# Install test dependencies
+pip install -r requirements.txt
+
+# Run all tests
+pytest tests/
+
+# Run with coverage report
+pytest tests/ --cov=crucible --cov-report=html
+
+# Run specific test file
+pytest tests/test_gradient_mapper.py -v
+```
+
+## 📊 CLI Dashboard
+
+Visualize analysis results with the built-in dashboard:
+
+```bash
+# Display analysis results
+python -m crucible.cli.dashboard --report path/to/report.json
+```
+
+Example output:
+```
+======================================================================
+                    THE CRUCIBLE DASHBOARD
+======================================================================
+
+📊 SUMMARY
+----------------------------------------------------------------------
+Model ID: YourRiskModel_v1
+Compliance Score: 87.00%
+Risk Level: LOW
+Total Vulnerabilities: 2
+
+🔒 DETECTED VULNERABILITIES
+----------------------------------------------------------------------
+🟡 1. gradient_sensitivity [MEDIUM] - layer1
+🟢 2. information_leakage [LOW] - layer2
+
+💡 RECOMMENDATIONS
+----------------------------------------------------------------------
+1. Apply gradient clipping to reduce sensitivity
+2. Implement differential privacy for information protection
+
+======================================================================
 ```
 
 ### Python API
