@@ -10,8 +10,12 @@ build/
 data/
 *.csv
 *.json
+!tests/sample_report.json
 *.sqlite
 *.db
+
+# Compliance reports
+compliance_reports/
 
 # Environments
 .env

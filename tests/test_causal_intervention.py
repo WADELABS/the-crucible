@@ -5,7 +5,7 @@ import torch.nn as nn
 from crucible.dissection.neural import CausalIntervener
 
 
-class TestModel(nn.Module):
+class InterventionTestModel(nn.Module):
     def __init__(self):
         super().__init__()
         self.layer1 = nn.Linear(10, 20)
@@ -20,14 +20,14 @@ class TestModel(nn.Module):
 
 def test_causal_intervener_initialization():
     """Test CausalIntervener initializes correctly."""
-    model = TestModel()
+    model = InterventionTestModel()
     intervener = CausalIntervener(model)
     assert intervener is not None
 
 
 def test_apply_ablation_hook():
     """Test applying ablation hooks to specific layers."""
-    model = TestModel()
+    model = InterventionTestModel()
     intervener = CausalIntervener(model)
     
     # Apply ablation to layer1
@@ -43,7 +43,7 @@ def test_apply_ablation_hook():
 
 def test_intervention_changes_output():
     """Test that intervention actually changes model behavior."""
-    model = TestModel()
+    model = InterventionTestModel()
     intervener = CausalIntervener(model)
     
     input_data = torch.randn(1, 10)
