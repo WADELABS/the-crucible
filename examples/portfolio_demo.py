@@ -1,10 +1,5 @@
 import asyncio
 import logging
-import sys
-import os
-
-# Ensure local 'src' is in path
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 try:
     import torch
@@ -18,10 +13,10 @@ except ImportError:
 from typing import Dict, Any
 
 # Internal Imports
-from src.crucible.dissection.neural import GradientMapper, CausalIntervener
-from src.crucible.intervention.adversarial import AdversarialLoopback, QuantumPruner
-from src.crucible.analysis.information import InformationBottleneck, SymbolicExtractor
-from src.crucible.compliance.iso42001 import ComplianceAuditor
+from crucible.dissection.neural import GradientMapper, CausalIntervener
+from crucible.intervention.adversarial import AdversarialLoopback, QuantumPruner
+from crucible.analysis.information import InformationBottleneck, SymbolicExtractor
+from crucible.compliance.iso42001 import ComplianceAuditor
 
 # Mock Neural Model for Credit Decisioning
 class CreditModel(nn.Module):
