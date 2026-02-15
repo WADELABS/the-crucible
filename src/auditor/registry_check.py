@@ -25,10 +25,15 @@ class StoryAuditor:
             }
             
         record = self.registry_database[name_upper]
-        if claimed_year < record["founded"]:
+        try:
+            year_int = int(claimed_year)
+        except (ValueError, TypeError):
+            return {"status": "ERROR", "message": "Claimed year must be a numeric value."}
+
+        if year_int < record["founded"]:
             return {
                 "status": "FABRICATED",
-                "message": f"Conflict detected: {business_name} was founded in {record['founded']}, but claim is for {claimed_year}."
+                "message": f"Conflict detected: {business_name} was founded in {record['founded']}, but claim is for {year_int}."
             }
             
         return {
