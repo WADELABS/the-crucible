@@ -1,0 +1,201 @@
+{
+  "report_type": "regulatory_submission",
+  "submission_metadata": {
+    "framework_version": "ISO/IEC 42001:2023 + EU AI Act + NIST AI RMF",
+    "submission_date": "2026-02-16T08:00:00Z",
+    "submission_id": "REG-2026-02-CRUCIBLE-001",
+    "reporting_entity": "The Crucible Framework v1.0.0",
+    "contact_person": "Chief Compliance Officer",
+    "contact_email": "compliance@example.com"
+  },
+  "model_information": {
+    "model_id": "production-risk-classifier-v4.2",
+    "model_type": "Neural Network Classifier",
+    "deployment_context": "Financial Risk Assessment",
+    "intended_use": "Credit risk evaluation for loan applications",
+    "deployment_date": "2026-01-15",
+    "last_updated": "2026-02-10"
+  },
+  "iso42001_compliance": {
+    "overall_compliance": "COMPLIANT",
+    "section_4_context": {
+      "status": "COMPLIANT",
+      "understanding_organization": "Documented",
+      "needs_expectations": "Defined",
+      "scope_determined": "Yes"
+    },
+    "section_5_leadership": {
+      "status": "COMPLIANT",
+      "policy_established": "Yes",
+      "roles_defined": "Yes",
+      "resources_allocated": "Yes"
+    },
+    "section_6_planning": {
+      "status": "COMPLIANT",
+      "risk_assessment": "Complete",
+      "opportunities_identified": "Yes",
+      "objectives_set": "Yes"
+    },
+    "section_7_support": {
+      "status": "COMPLIANT",
+      "resources": "Adequate",
+      "competence": "Verified",
+      "awareness": "Established",
+      "documented_information": "Maintained"
+    },
+    "section_8_operation": {
+      "status": "COMPLIANT",
+      "planning_control": "Implemented",
+      "impact_assessment": "Complete",
+      "data_management": "Compliant"
+    },
+    "section_9_performance": {
+      "status": "COMPLIANT",
+      "monitoring_measurement": "Active",
+      "analysis_evaluation": "Regular",
+      "internal_audit": "Scheduled",
+      "management_review": "Quarterly"
+    },
+    "section_10_improvement": {
+      "status": "COMPLIANT",
+      "nonconformity_action": "Process defined",
+      "continual_improvement": "Ongoing"
+    }
+  },
+  "eu_ai_act_alignment": {
+    "risk_classification": "High-Risk AI System",
+    "article_6_classification": "Annex III Category 5b - Credit Assessment",
+    "article_9_risk_management": {
+      "status": "COMPLIANT",
+      "risk_management_system": "Implemented",
+      "testing_procedures": "Comprehensive",
+      "post_market_monitoring": "Active"
+    },
+    "article_10_data_governance": {
+      "status": "COMPLIANT",
+      "training_data_quality": "High",
+      "bias_detection": "Implemented",
+      "data_privacy": "GDPR Compliant"
+    },
+    "article_11_technical_documentation": {
+      "status": "COMPLIANT",
+      "documentation_complete": "Yes",
+      "updated_regularly": "Yes"
+    },
+    "article_12_record_keeping": {
+      "status": "COMPLIANT",
+      "logging_enabled": "Yes",
+      "audit_trail": "Complete",
+      "retention_period": "7 years"
+    },
+    "article_13_transparency": {
+      "status": "COMPLIANT",
+      "instructions_provided": "Yes",
+      "explainability": "Available",
+      "user_information": "Clear"
+    },
+    "article_14_human_oversight": {
+      "status": "COMPLIANT",
+      "human_in_loop": "Yes",
+      "override_capability": "Implemented",
+      "monitoring_alerts": "Active"
+    },
+    "article_15_accuracy_robustness": {
+      "status": "COMPLIANT",
+      "accuracy_level": "92.3%",
+      "robustness_tested": "Yes",
+      "resilience_verified": "Yes"
+    }
+  },
+  "nist_ai_rmf_mapping": {
+    "govern": {
+      "status": "IMPLEMENTED",
+      "policies": "Defined",
+      "accountability": "Clear",
+      "risk_culture": "Established"
+    },
+    "map": {
+      "status": "IMPLEMENTED",
+      "context_identified": "Yes",
+      "risks_categorized": "Yes",
+      "impacts_assessed": "Yes"
+    },
+    "measure": {
+      "status": "IMPLEMENTED",
+      "metrics_defined": "Yes",
+      "testing_comprehensive": "Yes",
+      "validation_ongoing": "Yes"
+    },
+    "manage": {
+      "status": "IMPLEMENTED",
+      "risks_prioritized": "Yes",
+      "controls_implemented": "Yes",
+      "monitoring_active": "Yes"
+    }
+  },
+  "technical_assessment": {
+    "compliance_score": 0.91,
+    "vulnerability_count": 1,
+    "risk_level": "LOW",
+    "security_metrics": {
+      "adversarial_robustness": 0.88,
+      "privacy_preservation": 0.93,
+      "fairness_score": 0.89,
+      "explainability_score": 0.85
+    },
+    "tests_performed": [
+      "FGSM Attack (passed)",
+      "PGD Attack (passed)",
+      "Model Inversion (passed)",
+      "Backdoor Detection (passed)",
+      "Membership Inference (passed)",
+      "Bias Testing (passed)",
+      "Fairness Analysis (passed)"
+    ]
+  },
+  "audit_findings": {
+    "strengths": [
+      "Comprehensive risk management system",
+      "Strong adversarial robustness",
+      "Excellent privacy preservation",
+      "Clear documentation and explainability"
+    ],
+    "areas_for_improvement": [
+      "Minor optimization in inference speed",
+      "Enhanced monitoring dashboard features"
+    ],
+    "corrective_actions": [],
+    "preventive_actions": [
+      "Quarterly security assessments",
+      "Annual third-party audit",
+      "Continuous monitoring system"
+    ]
+  },
+  "certification_status": {
+    "iso42001_certified": "Pending external audit",
+    "eu_ai_act_conformity": "Self-assessed as conformant",
+    "third_party_assessment": "Scheduled for 2026-03-01",
+    "certification_bodies": [
+      "ISO Certification Body (pending)",
+      "EU Notified Body (scheduled)"
+    ]
+  },
+  "continuous_monitoring": {
+    "monitoring_frequency": "Daily automated, Weekly manual review",
+    "alert_system": "Active",
+    "incident_response": "Documented procedure",
+    "escalation_path": "Defined"
+  },
+  "stakeholder_communication": {
+    "internal_reporting": "Monthly to leadership",
+    "external_reporting": "Quarterly to regulators",
+    "user_communication": "As required by Article 13",
+    "transparency_reports": "Annual public disclosure"
+  },
+  "declaration": {
+    "conformity_declared": true,
+    "declaration_date": "2026-02-16",
+    "authorized_representative": "Chief AI Officer",
+    "signature": "[Digital Signature]"
+  }
+}

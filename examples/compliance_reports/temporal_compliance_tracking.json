@@ -1,0 +1,86 @@
+{
+  "report_type": "temporal_compliance_tracking",
+  "model_id": "financial-risk-model-v3.1",
+  "tracking_period": "6 months",
+  "start_date": "2025-08-16T00:00:00Z",
+  "end_date": "2026-02-16T00:00:00Z",
+  "total_assessments": 24,
+  "current_compliance_score": 0.84,
+  "initial_compliance_score": 0.62,
+  "trend": "improving",
+  "improvement_percentage": 35.5,
+  "compliance_score_history": [
+    {"date": "2025-08-16", "score": 0.62, "vulnerabilities": 9},
+    {"date": "2025-09-01", "score": 0.65, "vulnerabilities": 8},
+    {"date": "2025-09-15", "score": 0.68, "vulnerabilities": 7},
+    {"date": "2025-10-01", "score": 0.71, "vulnerabilities": 6},
+    {"date": "2025-10-15", "score": 0.73, "vulnerabilities": 5},
+    {"date": "2025-11-01", "score": 0.76, "vulnerabilities": 5},
+    {"date": "2025-11-15", "score": 0.78, "vulnerabilities": 4},
+    {"date": "2025-12-01", "score": 0.80, "vulnerabilities": 4},
+    {"date": "2025-12-15", "score": 0.81, "vulnerabilities": 3},
+    {"date": "2026-01-01", "score": 0.82, "vulnerabilities": 3},
+    {"date": "2026-01-15", "score": 0.83, "vulnerabilities": 3},
+    {"date": "2026-02-01", "score": 0.84, "vulnerabilities": 2}
+  ],
+  "version_comparison": [
+    {
+      "version": "v3.0",
+      "period": "2025-08-16 to 2025-10-31",
+      "avg_score": 0.67,
+      "avg_vulnerabilities": 7.5,
+      "status": "deprecated"
+    },
+    {
+      "version": "v3.1",
+      "period": "2025-11-01 to present",
+      "avg_score": 0.80,
+      "avg_vulnerabilities": 3.5,
+      "status": "active"
+    }
+  ],
+  "key_improvements": [
+    {
+      "date": "2025-09-15",
+      "improvement": "Implemented adversarial training",
+      "impact": "Reduced FGSM vulnerability by 45%"
+    },
+    {
+      "date": "2025-10-30",
+      "improvement": "Added differential privacy",
+      "impact": "Improved privacy score from 0.55 to 0.82"
+    },
+    {
+      "date": "2025-12-10",
+      "improvement": "Enhanced input validation",
+      "impact": "Eliminated 3 medium-severity vulnerabilities"
+    }
+  ],
+  "predictive_assessment": {
+    "projected_score_next_month": 0.86,
+    "confidence": 0.78,
+    "predicted_vulnerability_count": 1,
+    "forecast_basis": "Linear regression on last 6 assessments"
+  },
+  "milestones_achieved": [
+    {"date": "2025-10-15", "milestone": "Reached 70% compliance threshold"},
+    {"date": "2025-12-01", "milestone": "Achieved MEDIUM risk classification"},
+    {"date": "2026-01-15", "milestone": "Reached 80% compliance threshold"}
+  ],
+  "next_milestones": [
+    {"target_date": "2026-03-01", "milestone": "Achieve 90% compliance score"},
+    {"target_date": "2026-04-01", "milestone": "Zero critical vulnerabilities"}
+  ],
+  "trend_analysis": {
+    "direction": "positive",
+    "velocity": "+0.037 points per assessment",
+    "consistency": "high",
+    "confidence_level": 0.89
+  },
+  "recommendations": [
+    "Continue current improvement trajectory",
+    "Focus on remaining 2 vulnerabilities",
+    "Target 90% compliance score by Q2 2026",
+    "Maintain bi-weekly assessment schedule"
+  ]
+}
