@@ -11,11 +11,14 @@ data/
 *.csv
 *.json
 !tests/sample_report.json
+!examples/compliance_reports/*.json
 *.sqlite
 *.db
 
-# Compliance reports
+# Compliance reports (runtime generated)
 compliance_reports/
+# But allow example templates
+!examples/compliance_reports/
 
 # Environments
 .env

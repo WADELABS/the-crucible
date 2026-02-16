@@ -1,0 +1,64 @@
+{
+  "report_type": "multi_model_comparison",
+  "comparison_timestamp": "2026-02-16T08:00:00Z",
+  "models_compared": 3,
+  "comparison_summary": {
+    "best_model": "model-alpha-v1.2",
+    "worst_model": "model-gamma-v0.9",
+    "average_compliance_score": 0.72
+  },
+  "model_data": {
+    "model-alpha-v1.2": {
+      "compliance_score": 0.89,
+      "vulnerability_count": 2,
+      "risk_level": "LOW",
+      "strengths": ["High adversarial robustness", "Excellent privacy preservation"],
+      "weaknesses": ["Limited explainability"],
+      "recommendation": "APPROVED for production deployment"
+    },
+    "model-beta-v2.0": {
+      "compliance_score": 0.73,
+      "vulnerability_count": 5,
+      "risk_level": "MEDIUM",
+      "strengths": ["Good explainability", "Fair performance"],
+      "weaknesses": ["Moderate adversarial vulnerability"],
+      "recommendation": "Address vulnerabilities before deployment"
+    },
+    "model-gamma-v0.9": {
+      "compliance_score": 0.55,
+      "vulnerability_count": 12,
+      "risk_level": "HIGH",
+      "strengths": ["High performance on clean data"],
+      "weaknesses": ["Poor adversarial robustness", "Privacy concerns"],
+      "recommendation": "Significant remediation required"
+    }
+  },
+  "ranking": [
+    {"model_id": "model-alpha-v1.2", "compliance_score": 0.89, "rank": 1},
+    {"model_id": "model-beta-v2.0", "compliance_score": 0.73, "rank": 2},
+    {"model_id": "model-gamma-v0.9", "compliance_score": 0.55, "rank": 3}
+  ],
+  "deployment_readiness_matrix": {
+    "production_ready": ["model-alpha-v1.2"],
+    "needs_improvement": ["model-beta-v2.0"],
+    "not_ready": ["model-gamma-v0.9"]
+  },
+  "comparative_metrics": {
+    "adversarial_robustness": {
+      "model-alpha-v1.2": 0.92,
+      "model-beta-v2.0": 0.68,
+      "model-gamma-v0.9": 0.41
+    },
+    "privacy_preservation": {
+      "model-alpha-v1.2": 0.95,
+      "model-beta-v2.0": 0.75,
+      "model-gamma-v0.9": 0.52
+    },
+    "explainability": {
+      "model-alpha-v1.2": 0.65,
+      "model-beta-v2.0": 0.82,
+      "model-gamma-v0.9": 0.70
+    }
+  },
+  "recommendation": "Deploy model-alpha-v1.2 for production use. Model-beta-v2.0 can serve as backup after addressing identified vulnerabilities. Model-gamma-v0.9 requires significant work before consideration."
+}

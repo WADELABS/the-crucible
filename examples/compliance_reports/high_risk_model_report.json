@@ -1,0 +1,39 @@
+{
+  "report_type": "high_risk_model_assessment",
+  "model_id": "financial-trading-model-v2.3",
+  "timestamp": "2026-02-16T08:00:00Z",
+  "compliance_framework": "ISO/IEC 42001:2023",
+  "compliance_score": 0.42,
+  "risk_level": "HIGH",
+  "total_vulnerabilities": 15,
+  "critical_vulnerabilities": [
+    {
+      "id": "VULN-001",
+      "severity": "CRITICAL",
+      "category": "Adversarial Robustness",
+      "description": "Model susceptible to FGSM attacks with epsilon=0.05, 89% success rate",
+      "cvss_score": 9.2
+    },
+    {
+      "id": "VULN-002",
+      "severity": "CRITICAL",
+      "category": "Privacy Leakage",
+      "description": "Membership inference attack successful with 87% accuracy",
+      "cvss_score": 8.8
+    },
+    {
+      "id": "VULN-003",
+      "severity": "CRITICAL",
+      "category": "Backdoor Detection",
+      "description": "Potential backdoor trigger detected",
+      "cvss_score": 9.5
+    }
+  ],
+  "remediation_steps": [
+    "Implement adversarial training",
+    "Apply differential privacy",
+    "Conduct backdoor removal",
+    "Add input validation"
+  ],
+  "deployment_recommendation": "DO NOT DEPLOY"
+}
