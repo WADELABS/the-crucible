@@ -8,7 +8,7 @@ This module provides:
 - Session management
 """
 
-import hashlib
+import bcrypt
 import json
 import logging
 import secrets
@@ -169,8 +169,38 @@ class UserAuthenticator:
         logger.info(f"UserAuthenticator initialized with {auth_backend} backend")
     
     def _hash_password(self, password: str) -> str:
-        """Hash password using SHA-256."""
-        return hashlib.sha256(password.encode()).hexdigest()
+        """
+        Hash password using bcrypt with salt.
+        
+        Args:
+            password: Plain text password
+            
+        Returns:
+            Bcrypt hash string (includes salt)
+        """
+        # Generate salt and hash password
+        # Using default work factor of 12 rounds (2^12 iterations)
+        salt = bcrypt.gensalt()
+        password_hash = bcrypt.hashpw(password.encode('utf-8'), salt)
+        # Return as string for JSON serialization
+        return password_hash.decode('utf-8')
+    
+    def _verify_password(self, password: str, password_hash: str) -> bool:
+        """
+        Verify password against bcrypt hash.
+        
+        Args:
+            password: Plain text password to verify
+            password_hash: Stored bcrypt hash
+            
+        Returns:
+            True if password matches hash
+        """
+        try:
+            return bcrypt.checkpw(password.encode('utf-8'), password_hash.encode('utf-8'))
+        except (ValueError, TypeError) as e:
+            logger.warning(f"Password verification failed: {e}")
+            return False
     
     def _load_users(self) -> None:
         """Load users from file storage."""
@@ -301,10 +331,8 @@ class UserAuthenticator:
             logger.warning(f"Authentication failed: user {username} is inactive")
             return None
         
-        password_hash = self._hash_password(password)
-        
-        # Use constant-time comparison to prevent timing attacks
-        if not secrets.compare_digest(user.password_hash, password_hash):
+        # Verify password using bcrypt
+        if not self._verify_password(password, user.password_hash):
             logger.warning(f"Authentication failed: invalid password for {username}")
             return None
         
